@@ -10,7 +10,7 @@ export const api = createTRPCReact();
 
 export function TRPCReactProvider(props: { children: React.ReactNode }) {
   const queryClient = createQueryClient();
-  const BASE_URL = "http://192.168.29.15:5005/api/trpc";
+  const BASE_URL = "http://192.168.29.87:5005/api/trpc";
 
   const [trpcClient] = useState(() =>
     api.createClient({

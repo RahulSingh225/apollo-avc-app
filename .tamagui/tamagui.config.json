@@ -19419,6 +19419,7 @@
       "useAnimatedNumberReaction": "Function",
       "useAnimatedNumberStyle": "Function",
       "usePresence": "Function",
+      "ResetPresence": "Function",
       "useAnimations": "Function"
     },
     "media": {

@@ -11,7 +11,7 @@ const DrawerLayout = () => {
   if (isLoading) {
     return <Text>Loading...</Text>;
   }
-  if (!session) {
+  if (session) {
     return <Redirect href="/(public)/generate-otp" />;
   }
   return (

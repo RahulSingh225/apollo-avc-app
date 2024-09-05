@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { TamaguiProvider } from 'tamagui';
 import config from '../tamagui.config';
-import { TRPCProvider } from '~/trpc/react';
+import { TRPCReactProvider } from '~/trpc/react';
 import { SessionProvider } from '~/context/AuthContext';
 
 SplashScreen.preventAutoHideAsync();
@@ -29,7 +29,7 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
-    <TRPCProvider>
+    <TRPCReactProvider>
       <TamaguiProvider config={config}>
         <GestureHandlerRootView style={{ flex: 1 }}>
           <SessionProvider>
@@ -37,6 +37,6 @@ export default function RootLayout() {
           </SessionProvider>
         </GestureHandlerRootView>
       </TamaguiProvider>
-    </TRPCProvider>
+    </TRPCReactProvider>
   );
 }

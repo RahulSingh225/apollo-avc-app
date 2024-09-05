@@ -1,29 +1,29 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native';
-import { trpc } from '~/trpc/react';
+import { api } from '~/trpc/react';
 
 const GenerateOTP = () => {
   const [otp, setOtp] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
-  const mutation = trpc.user.generateOTP.useMutation();
+  // const mutation = api.user.generateOTP.useMutation();
 
-  const handleLogin = async () => {
-    mutation.mutate({
-      mobileNumber,
-      role: 1,
-    }, {
-      onSuccess: () => {
-        router.push({
-          pathname: "/validate-otp",
-          params: { mobileNumber }
-        })
-      },
-      onError: (error) => {
-        console.log('Error:', error);
-      }
-    });
-  };
+  // const handleLogin = async () => {
+  //   mutation.mutate({
+  //     mobileNumber,
+  //     role: 1,
+  //   }, {
+  //     onSuccess: () => {
+  //       router.push({
+  //         pathname: "/validate-otp",
+  //         params: { mobileNumber }
+  //       })
+  //     },
+  //     onError: (error) => {
+  //       console.log('Error:', error);
+  //     }
+  //   });
+  // };
 
   return (
     <View style={styles.container}>
@@ -67,7 +67,7 @@ const GenerateOTP = () => {
             onPress={() => router.push('/(public)/registration')}>
             <Text style={styles.newUserText}>New User</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+          <TouchableOpacity style={styles.loginButton} >
             <Text style={styles.loginButtonText}>Request OTP</Text>
           </TouchableOpacity>
         </View>
